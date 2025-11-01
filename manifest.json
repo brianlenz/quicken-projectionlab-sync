@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Quicken ProjectionLab Sync",
+  "version": "1.0.0",
+  "description": "Chrome extension for syncing Quicken data with ProjectionLab",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://app.projectionlab.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://app.projectionlab.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
+
