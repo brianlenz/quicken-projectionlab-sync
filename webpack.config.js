@@ -8,7 +8,8 @@ const __dirname = path.dirname(__filename);
 export default {
   entry: {
     content: './src/content.ts',
-    popup: './src/popup.ts'
+    popup: './src/popup.ts',
+    injected: './src/injected.ts'
   },
   module: {
     rules: [

@@ -17,6 +17,12 @@
       "matches": ["https://app.projectionlab.com/*"],
       "js": ["content.js"]
     }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["https://app.projectionlab.com/*"]
+    }
   ]
 }
 
