@@ -110,7 +110,7 @@ function calculateDerivedBalances(balances: Map<string, number>): void {
   const cashAccounts = balances.get('TOTAL Cash Accounts') || 0;
   const creditCardAccounts = balances.get('TOTAL Credit Card Accounts') || 0;
 
-  const cashflowBalance = bankAccounts + cashAccounts + creditCardAccounts;
+  const cashflowBalance = Math.max(0, bankAccounts + cashAccounts + creditCardAccounts);
 
   console.log('Calculating Cashflow Balance:');
   console.log(`  TOTAL Bank Accounts: $${bankAccounts.toLocaleString()}`);
