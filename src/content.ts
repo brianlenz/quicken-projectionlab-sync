@@ -119,7 +119,25 @@ async function loadProjectionLabAccounts(apiKey: string): Promise<Map<string, st
       }
     }
 
-    console.log(`Loaded ${accountMap.size} accounts from ProjectionLab`);
+    const accountCount = accountMap.size;
+    console.log(`Loaded ${accountCount} accounts from ProjectionLab`);
+
+    // todo: ProjectionLab's API currently doesn't support updating asset values!
+    // Extract assets from events
+    // if (firstPlan.assets && firstPlan.assets.events) {
+    //   const assetEvents = firstPlan.assets.events;
+    //   console.log(`Found ${assetEvents.length} asset events`);
+    //
+    //   // Build the map of assetId -> name
+    //   for (const event of assetEvents) {
+    //     if (event.assetId && event.name) {
+    //       accountMap.set(event.assetId, event.name);
+    //       console.log(`Asset: ${event.assetId} -> ${event.name}`);
+    //     }
+    //   }
+    //
+    //   console.log(`Loaded ${accountMap.size - accountCount} assets from ProjectionLab`);
+    // }
 
   } catch (error) {
     console.error('Error loading ProjectionLab accounts:', error);
